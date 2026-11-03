@@ -32,6 +32,7 @@ namespace WheelOfFortune_Assignment
   
             }
 
+            //ayoko na
 
         }
 
@@ -58,7 +59,7 @@ namespace WheelOfFortune_Assignment
         }
         
 
-
+        
 
        struct Contestants
         {
@@ -73,7 +74,7 @@ namespace WheelOfFortune_Assignment
         //
        
 
-
+        
 
 
 
