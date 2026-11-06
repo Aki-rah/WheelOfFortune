@@ -21,9 +21,9 @@ namespace WheelOfFortune_Assignment
             switch (mainMenu)
             {
                 case "1":
-                    Console.WriteLine("1 Play");
+                    Console.WriteLine("0 List all contestants");
                     break;
-                case "2": Console.WriteLine("2 Contestants");
+                case "2": Console.WriteLine("1 Update contestant ");
                     break;
                 case "3": Console.WriteLine("3 Reset all scores to 0");
                     break;
@@ -36,26 +36,32 @@ namespace WheelOfFortune_Assignment
 
         }
 
-        static Contestants[] contestants = new Contestants[23];
-        static void readContestants()
-        {
-            string aline;
-            int i = 0;
-            Random random = new Random();
-
-            StreamReader sr = new StreamReader("wheelOfFortune.txt");
-            while (!sr.EndOfStream && i < contestants.Length)
-            {
+       static string[] firstNames = new string [23];
 
 
-                contestants[i].firstName = sr.ReadLine();
-                contestants[i].lastName = sr.ReadLine();
-                contestants[i].interest = "Programming";
-                contestants[i].score = random.Next(1, 5); // change
 
-                i++;
-            }
-            sr.Close();
+
+
+        //static Contestants[] contestants = new Contestants[23];
+        //static void readContestants()
+        //{
+        //    string aline;
+        //    int i = 0;
+        //    Random random = new Random();
+
+        //    StreamReader sr = new StreamReader("wheelOfFortune.txt");
+        //    while (!sr.EndOfStream && i < contestants.Length)
+        //    {
+
+
+        //        contestants[i].firstName = sr.ReadLine();
+        //        contestants[i].lastName = sr.ReadLine();
+        //        contestants[i].interest = "Programming";
+        //        contestants[i].score = random.Next(1, 5); // change
+
+        //        i++;
+        //    }
+        //    sr.Close();
         }
         
 
