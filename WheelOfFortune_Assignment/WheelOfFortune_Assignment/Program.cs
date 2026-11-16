@@ -27,83 +27,84 @@ namespace WheelOfFortune_Assignment
             static Random random = new Random();
             
             static string fileName = "WheelOfFortune.txt";
-          
 
 
-            static void Main(string[] args)
+
+        static void Main(string[] args)
+        {
+            LoadFile();
+
+            int choice = 0;
+
+            do
             {
-                LoadFile();
+                Console.Clear();
+                Console.WriteLine("==============================");
+                Console.WriteLine("       WHEEL OF FORTUNE");
+                Console.WriteLine("==============================");
+                Console.WriteLine("1. List all contestants");
+                Console.WriteLine("2. Update contestant interest");
+                Console.WriteLine("3. Generate 10 finalists");
+                Console.WriteLine("4. Select random player");
+                Console.WriteLine("5. Play Wheel of Fortune");
+                Console.WriteLine("6. Display top five scores");
+                Console.WriteLine("7. Exit");
+                Console.WriteLine("==============================");
+                Console.Write("Enter your choice: ");
 
-                int choice = 0;
-
-                do
+                // Check that the user enters a number
+                if (int.TryParse(Console.ReadLine(), out choice))
                 {
-                    Console.Clear();
-                    Console.WriteLine("==============================");
-                    Console.WriteLine("       WHEEL OF FORTUNE");
-                    Console.WriteLine("==============================");
-                    Console.WriteLine("1. List all contestants");
-                    Console.WriteLine("2. Update contestant interest");
-                    Console.WriteLine("3. Generate 10 finalists");
-                    Console.WriteLine("4. Select random player");
-                    Console.WriteLine("5. Play Wheel of Fortune");
-                    Console.WriteLine("6. Display top five scores");
-                    Console.WriteLine("7. Exit");
-                    Console.WriteLine("==============================");
-                    Console.Write("Enter your choice: ");
-
-                    // Check that the user enters a number
-                    if (int.TryParse(Console.ReadLine(), out choice))
+                    switch (choice)
                     {
-                        switch (choice)
-                        {
-                            case 1:
-                                ListContestants();
-                                break;
+                        case 1:
+                            ListContestants();
+                            break;
 
-                            case 2:
-                                UpdateInterest();
-                                break;
+                        case 2:
+                            UpdateInterest();
+                            break;
 
-                            case 3:
-                                GenerateFinalists();
-                                break;
+                        case 3:
+                            GenerateFinalists();
+                            break;
 
-                            case 4:
-                                SelectPlayer();
-                                break;
+                        case 4:
+                            SelectPlayer();
+                            break;
 
-                            case 5:
-                                PlayGame();
-                                break;
+                        case 5:
+                            PlayGame();
+                            break;
 
-                            case 6:
-                                DisplayTopFive();
-                                break;
+                        case 6:
+                            DisplayTopFive();
+                            break;
 
-                            case 7:
-                                SaveFile();
-                                Console.WriteLine("Goodbye!");
-                                break;
+                        case 7:
+                            SaveFile();
+                            Console.WriteLine("Goodbye!");
+                            break;
 
-                            default:
-                                Console.WriteLine("Invalid option. Please choose 1-7.");
-                                break;
-                        }
+                        default:
+                            Console.WriteLine("Invalid option. Please choose 1-7.");
+                            break;
                     }
-                    else
-                    {
-                        Console.WriteLine("Please enter a valid number.");
-                    }
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a valid number.");
+                }
 
-                    if (choice != 7)
-                    {
-                        Console.WriteLine("\nPress ENTER to continue...");
-                        Console.ReadLine();
-                    }
+                if (choice != 7)
+                {
+                    Console.WriteLine("\nPress ENTER to continue...");
+                    Console.ReadLine();
+                }
 
-                } while (choice != 7);
-            }
+            } while (choice != 7);
+
+        }
 
             // Reads the contestant information from the text file
             static void LoadFile()
@@ -139,7 +140,8 @@ namespace WheelOfFortune_Assignment
             sr.Close();
 
             Console.WriteLine("\nTotal contestants loaded: " + contestantCount);
-        }
+
+            }
 
 
         // Saves all contestant information back to the text file
@@ -234,7 +236,7 @@ namespace WheelOfFortune_Assignment
 
                 if (!found)
                 {
-                    Console.WriteLine("Contestant was not found.");
+                    Console.WriteLine("Contestant was not found");
                 }
             }
 
